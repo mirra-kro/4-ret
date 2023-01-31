@@ -29,6 +29,12 @@ CREATE TABLE `topic`
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4 COMMENT ='话题表';
 
+    `id`          bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键id',
+    `user_id`     bigint(20) unsigned NOT NULL DEFAULT 0 COMMENT '用户id',
+    `title`       varchar(128)        NOT NULL default '' COMMENT '标题',
+    `content`     text                NOT NULL COMMENT '头像',
+    `create_time` timestamp           NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+    PRIMARY KEY (`id`)
 INSERT INTO `topic`
 VALUES (1, 1, '青训营开课啦', '快到碗里来！', '2022-04-01 13:50:19');
 
